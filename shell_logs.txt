@@ -1,0 +1,500 @@
+   33  gdb bin/test-hw
+   34  make week1
+   35  gdb bin/test-hw
+   36  make week1
+   37  bin/test-hw -a
+   38  make week1
+   39  bin/test-hw -a
+   40  make week1
+   41  make week1
+   42  bin/test-hw -a
+   43  bin/test-hw -a -v 2
+   44  make week1
+   45  bin/test-hw -a -v 2
+   46  make week1
+   47  bin/test-hw -a -v 2
+   48  make week1
+   49  bin/test-hw -a -v 2
+   50  make week1
+   51  bin/test-hw -a -v 2
+   52  make week1
+   53  bin/test-hw -a -v 2
+   54  make week1
+   55  bin/test-hw -a -v 2
+   56  make week1
+   57  bin/test-hw -a -v 2
+   58  make week1
+   59  bin/test-hw -a -v 2
+   60  make week1
+   61  bin/test-hw -a -v 2
+   62  bin/test-hw -v 2
+   63  make week1
+   64  bin/test-hw -v 2
+   65  bin/test-hw
+   66  make week1
+   67  bin/test-hw -v 2
+   68  make week1
+   69  bin/test-hw -v 2
+   70  bin/test-hw
+   71  make week1
+   72  make week1
+   73  make week1
+   74  make week1
+   75  bin/test-hw
+   76  git add .
+   77  git commit -m "Submission"
+   78  git push
+   79  ./DELETE_AND_TURNIN
+   80  ls -;
+   81  ls -l
+   82  logout
+   83  ls -l
+   84  git clone https://github.com/ianhowey12/Practice-1
+   85  ls -l
+   86  cd Practice-1
+   87  make spinosaurus
+   88  make trex
+   89  ls -l
+   90  cd Practice-1
+   91  ls -l
+   92  cat Makefile
+   93  make spinosaurus
+   94  make trex
+   95  make raptor
+   96  ls
+   97  cd bin
+   98  ls
+   99  cd ..
+  100  ls
+  101  cat reorder.c
+  102  ls
+  103  cd testcases
+  104  ls
+  105  cd ..
+  106  make trex
+  107  ls
+  108  ref_orderr
+  109  ref_order
+  110  chmod +x ref_order
+  111  ref_order
+  112  ref_order -f testcases/all_new
+  113  cd bin
+  114  ls
+  115  cd ..
+  116  bin/main.o
+  117  chmod +x bin/main.o
+  118  bin/main.o
+  119  gdb make raptor
+  120  ls
+  121  make stego
+  122  ls -l
+  123  cd outputs
+  124  ls -l
+  125  cd ..
+  126  logout
+  127  make trex
+  128  make trike
+  129  ls
+  130  cd Practice-1/
+  131  ls
+  132  ls bin
+  133  bin/reorder
+  134  bin/reorder.o
+  135  chmod +x bin/reorder.o
+  136  bin/reorder.o
+  137  cat README.md
+  138  cat Makefile
+  139  bin/orderlogs
+  140  bin/orderlogs -f testcases/all_new
+  141  gdb bin/orderlogs
+  142  cat  reorder.c
+  143  gdb bin/orderlogs
+  144  q
+  145  ls
+  146  cd Practice-1
+  147  ls
+  148  cd ..
+  149  echo "#include "reorder.h"
+  150  static struct listnode* find_news(struct listnode** );
+  151  static struct listnode* reverse(struct listnode* );
+  152  static struct listnode* merge(struct listnode* , struct listnode* );
+  153  struct listnode* reorder_list(struct listnode* node) {
+  154      struct listnode* news_head = find_news(&node);
+  155      news_head = reverse(news_head);
+  156      node = merge(node, news_head);
+  157      return node;
+  158  }
+  159  static struct listnode* find_news(struct listnode** node) {
+  160      struct listnode* follow = NULL;
+  161      struct listnode* itr = *node;
+  162      while (itr->age == OLD) {
+  163          follow = itr;
+  164          itr = itr->next;
+  165      }
+  166      if (follow) {
+  167          follow->next = NULL;
+  168      }
+  169      if (itr == *node) {
+  170          *node = NULL;
+  171      }
+  172      return itr;
+  173  }
+  174  static struct listnode* reverse(struct listnode* node) {
+  175      struct listnode* prev = NULL;
+  176      while (node) {
+  177          struct listnode* next = node->next;
+  178          node->next = prev;
+  179          prev = node;
+  180          node = next;
+  181      }
+  182      return prev;
+  183  }
+  184  static struct listnode* merge(struct listnode* node1, struct listnode* node2) {
+  185      struct listnode head = {0};
+  186      struct listnode* itr = &head;
+  187      while (true) {
+  188          itr->next = node1;
+  189  	if(node1 == NULL) return head.next;
+  190          node1 = node1->next;
+  191          itr = itr->next;
+  192          itr->next = node2;
+  193  	if(node2 == NULL) return head.next;
+  194          itr = itr->next;
+  195          node2 = node2->next;
+  196      }
+  197      return head.next;
+  198  }
+  199  void print_list(struct listnode* node) {
+  200      struct listnode* itr = node;
+  201      while (itr) {
+  202          print_age(itr->age);
+  203          printf(" [%d]\n", itr->value);
+  204          itr = itr->next;
+  205      }
+  206  }
+  207  void free_list(struct listnode* node) {
+  208      while (node) {
+  209          struct listnode* next = node->next;
+  210          free(node);
+  211          node = next;
+  212      }
+  213  }" > reorder.c
+  214  cat reorder.c
+  215  ls
+  216  cat Makefile
+  217  make spinosaurus
+  218  make trike
+  219  echo "#include "reorder.h"
+  220  static struct listnode* find_news(struct listnode** );
+  221  static struct listnode* reverse(struct listnode* );
+  222  static struct listnode* merge(struct listnode* , struct listnode* );
+  223  struct listnode* reorder_list(struct listnode* node) {
+  224      struct listnode* news_head = find_news(&node);
+  225      news_head = reverse(news_head);
+  226      node = merge(node, news_head);
+  227      return node;
+  228  }
+  229  static struct listnode* find_news(struct listnode** node) {
+  230      struct listnode* follow = NULL;
+  231      struct listnode* itr = *node;
+  232      while (itr->age == OLD) {
+  233          follow = itr;
+  234          itr = itr->next;
+  235      }
+  236      if (follow) {
+  237          follow->next = NULL;
+  238      }
+  239      if (itr == *node) {
+  240          *node = NULL;
+  241      }
+  242      return itr;
+  243  }
+  244  static struct listnode* reverse(struct listnode* node) {
+  245      struct listnode* prev = NULL;
+  246      while (node) {
+  247          struct listnode* next = node->next;
+  248          node->next = prev;
+  249          prev = node;
+  250          node = next;
+  251      }
+  252      return prev;
+  253  }
+  254  static struct listnode* merge(struct listnode* node1, struct listnode* node2) {
+  255      struct listnode head = {0};
+  256      struct listnode* itr = &head;
+  257      while (true) {
+  258          itr->next = node1;
+  259          node1 = node1->next;
+  260          itr = itr->next;
+  261          itr->next = node2;
+  262          itr = itr->next;
+  263          node2 = node2->next;
+  264      }
+  265      return head.next;
+  266  }
+  267  void print_list(struct listnode* node) {
+  268      struct listnode* itr = node;
+  269      while (itr) {
+  270          print_age(itr->age);
+  271          printf(" [%d]\n", itr->value);
+  272          itr = itr->next;
+  273      }
+  274  }
+  275  void free_list(struct listnode* node) {
+  276      while (node) {
+  277          struct listnode* next = node->next;
+  278          free(node);
+  279          node = next;
+  280      }
+  281  }" > reorder.c
+  282  echo `#include "reorder.h"
+  283  static struct listnode* find_news(struct listnode** );
+  284  static struct listnode* reverse(struct listnode* );
+  285  static struct listnode* merge(struct listnode* , struct listnode* );
+  286  struct listnode* reorder_list(struct listnode* node) {
+  287      struct listnode* news_head = find_news(&node);
+  288      news_head = reverse(news_head);
+  289      node = merge(node, news_head);
+  290      return node;
+  291  }
+  292  static struct listnode* find_news(struct listnode** node) {
+  293      struct listnode* follow = NULL;
+  294      struct listnode* itr = *node;
+  295      while (itr->age == OLD) {
+  296          follow = itr;
+  297          itr = itr->next;
+  298      }
+  299      if (follow) {
+  300          follow->next = NULL;
+  301      }
+  302      if (itr == *node) {
+  303          *node = NULL;
+  304      }
+  305      return itr;
+  306  }
+  307  static struct listnode* reverse(struct listnode* node) {
+  308      struct listnode* prev = NULL;
+  309      while (node) {
+  310          struct listnode* next = node->next;
+  311          node->next = prev;
+  312          prev = node;
+  313          node = next;
+  314      }
+  315      return prev;
+  316  }
+  317  static struct listnode* merge(struct listnode* node1, struct listnode* node2) {
+  318      struct listnode head = {0};
+  319      struct listnode* itr = &head;
+  320      while (true) {
+  321          itr->next = node1;
+  322          node1 = node1->next;
+  323          itr = itr->next;
+  324          itr->next = node2;
+  325          itr = itr->next;
+  326          node2 = node2->next;
+  327      }
+  328      return head.next;
+  329  }
+  330  void print_list(struct listnode* node) {
+  331      struct listnode* itr = node;
+  332      while (itr) {
+  333          print_age(itr->age);
+  334          printf(" [%d]\n", itr->value);
+  335          itr = itr->next;
+  336      }
+  337  }
+  338  void free_list(struct listnode* node) {
+  339      while (node) {
+  340          struct listnode* next = node->next;
+  341          free(node);
+  342          node = next;
+  343      }
+  344  }` > reorder.c
+  345  cat reorder.c
+  346  #include "reorder.h"
+  347  static struct listnode* find_news(struct listnode** );
+  348  static struct listnode* reverse(struct listnode* );
+  349  static struct listnode* merge(struct listnode* , struct listnode* );
+  350  struct listnode* reorder_list(struct listnode* node) {
+  351      struct listnode* news_head = find_news(&node);
+  352      news_head = reverse(news_head);
+  353      node = merge(node, news_head);
+  354      return node;
+  355  }
+  356  static struct listnode* find_news(struct listnode** node) {
+  357      struct listnode* follow = NULL;
+  358      struct listnode* itr = *node;
+  359      while (itr->age == OLD) {
+  360          follow = itr;
+  361          itr = itr->next;
+  362      }
+  363      if (follow) {
+  364          follow->next = NULL;
+  365      }
+  366      if (itr == *node) {
+  367          *node = NULL;
+  368      }
+  369      return itr;
+  370  }
+  371  static struct listnode* reverse(struct listnode* node) {
+  372      struct listnode* prev = NULL;
+  373      while (node) {
+  374          struct listnode* next = node->next;
+  375          node->next = prev;
+  376          prev = node;
+  377          node = next;
+  378      }
+  379      return prev;
+  380  }
+  381  static struct listnode* merge(struct listnode* node1, struct listnode* node2) {
+  382      struct listnode head = {0};
+  383      struct listnode* itr = &head;
+  384      while (true) {
+  385          itr->next = node1;
+  386          node1 = node1->next;
+  387          itr = itr->next;
+  388          itr->next = node2;
+  389          itr = itr->next;
+  390          node2 = node2->next;
+  391      }
+  392      return head.next;
+  393  }
+  394  void print_list(struct listnode* node) {
+  395      struct listnode* itr = node;
+  396      while (itr) {
+  397          print_age(itr->age);
+  398          printf(" [%d]\n", itr->value);
+  399          itr = itr->next;
+  400      }
+  401  }
+  402  void free_list(struct listnode* node) {
+  403      while (node) {
+  404          struct listnode* next = node->next;
+  405          free(node);
+  406          node = next;
+  407      }
+  408  } > reorder.c
+  409      node = merge(node, news_head);
+  410      return node;
+  411  }
+  412  static struct listnode* find_news(struct listnode** node) {
+  413      struct listnode* follow = NULL;
+  414      struct listnode* itr = *node;
+  415      while (itr->age == OLD) {
+  416          follow = itr;
+  417          itr = itr->next;
+  418      }
+  419      if (follow) {
+  420          follow->next = NULL;
+  421      }
+  422      if (itr == *node) {
+  423          *node = NULL;
+  424      }
+  425      return itr;
+  426  }
+  427  static struct listnode* reverse(struct listnode* node) {
+  428      struct listnode* prev = NULL;
+  429      while (node) {
+  430          struct listnode* next = node->next;
+  431          node->next = prev;
+  432          prev = node;
+  433          node = next;
+  434      }
+  435      return prev;
+  436  }
+  437  static struct listnode* merge(struct listnode* node1, struct listnode* node2) {
+  438      struct listnode head = {0};
+  439      struct listnode* itr = &head;
+  440  ls
+  441  ls
+  442  ls
+  443  flush
+  444  ls
+  445  clear
+  446  cat > reorder.c
+  447  cat reorder.c
+  448  ls
+  449  ls bin
+  450  cat  Makefile
+  451  make spinosaurus
+  452  make stego
+  453  cat > reorder.c
+  454  make spinosaurus
+  455  make stego
+  456  cat README.md
+  457  cat > reorder.c
+  458  cat reorder.c
+  459  make spinosaurus
+  460  make stego
+  461  gdb bin/orderlogs
+  462  cat > reorder.c
+  463  make spinosaurus
+  464  make stego
+  465  cat README.md
+  466  history > shell_logs.txt
+  467  ls
+  468  cat shell_logs.txt
+  469  git add .
+  470  git commit -m "Done"
+  471  git push
+  472  git push
+  473  cat README.md
+  474  ls
+  475  rm -rf *
+  476  ls
+  477  cd ..
+  478  ls
+  479  logout
+  480  git clone https://github.com/ianhowey12/Practice1
+  481  ls
+  482  cd Practice1
+  483  ls
+  484  cat Makefile
+  485  cat README.md
+  486  ls
+  487  pwd
+  488  make spinosaurus
+  489  make trex
+  490  make stego
+  491  ls
+  492  chmod +x ./ref_order
+  493  make stego
+  494  ls bin
+  495  bin/orderlogs
+  496  bin/orderlogs -f testcases/all_new
+  497  gbd bin/orderlogs
+  498  gdb bin/orderlogs
+  499  ls
+  500  cat reorder.c
+  501  gdb bin/orderlogs
+  502  ls
+  503  gdb bin/orderlogs
+  504  cat > reorder.c
+  505  cat reorder.c
+  506  gdb bin/orderlogs
+  507  make spinosaurus
+  508  make trike
+  509  gdb bin/orderlogs
+  510  cat > reorder.c
+  511  make spinosaurus
+  512  make trike
+  513  gdb bin/orderlogs
+  514  make raptor
+  515  make stego
+  516  ls
+  517  ref_order
+  518  ref_order -f *
+  519  ref_order -f testcases/all_new
+  520  ls bin
+  521  bin/orderlogs -f  testcases/all_new
+  522  bin/orderlogs -f  testcases/all_old
+  523  ref_order -f testcases/all_old
+  524  ref_order -f testcases/uneven_old
+  525  bin/orderlogs -f  testcases/uneven_old
+  526  bin/orderlogs -f testcases/short_bal
+  527  ref_order -f testcases/short_bal
+  528  ref_order -f testcases/single_new
+  529  bin/orderlogs -f testcases/single_new
+  530  bin/orderlogs -f testcases/single_old
+  531  ref_order -f testcases/single_old
+  532  history > shell_logs.txt
